@@ -9,17 +9,17 @@ const GRID_WIDTH = document.getElementById('inputWidth');
 const GRID_SIZE = document.getElementById('sizePicker');
 const CANVAS = document.getElementById('pixelCanvas');
 
+// When size is submitted by the user, call makeGrid()
+GRID_SIZE.addEventListener('submit', (event) => {
+  makeGrid();
+  event.preventDefault();
+});
+
 // Changes the color of the pixel pen based on user's color input
 function changeColor(element) {
     let color = COLOR.value;
     element.style = 'background-color: ' + color + ';';
 }
-
-// When size is submitted by the user, call makeGrid()
-GRID_SIZE.addEventListener('submit', (event) => {
-    makeGrid();
-    event.preventDefault();
-});
 
 // Function for creating grid based on user input
 function makeGrid() {
